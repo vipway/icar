@@ -7,6 +7,7 @@ import Index from './pages/index'
 import configStore from './store'
 
 import './app.scss'
+import './libs/styles/taro-ui.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -27,7 +28,8 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/index/index'
+      'pages/home/index',
+      'pages/personal/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -37,19 +39,19 @@ class App extends Component {
     }
   }
 
-  componentDidMount () {}
+  componentDidMount() { }
 
-  componentDidShow () {}
+  componentDidShow() { }
 
-  componentDidHide () {}
+  componentDidHide() { }
 
-  componentCatchError () {}
+  componentCatchError() { }
 
-  componentDidCatchError () {}
+  componentDidCatchError() { }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
       <Provider store={store}>
         <Index />

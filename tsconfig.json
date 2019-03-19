@@ -18,14 +18,19 @@
     "jsx": "preserve",
     "jsxFactory": "Taro.createElement",
     "allowJs": true,
-    "resolveJsonModule": true,
+    // "resolveJsonModule": true,
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "skipLibCheck": true,
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "lib"
   ],
   "compileOnSave": false
 }

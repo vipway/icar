@@ -1,5 +1,5 @@
 const config = {
-  projectName: 'icar1',
+  projectName: 'icar',
   date: '2019-3-19',
   designWidth: 750,
   deviceRatio: {
@@ -90,7 +90,8 @@ const config = {
           }
         }
       }
-    }
+    },
+    esnextModules: ['taro-ui']
   }
 }
 
