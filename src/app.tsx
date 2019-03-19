@@ -7,7 +7,6 @@ import Index from './pages/index'
 import configStore from './store'
 
 import './app.scss'
-import './libs/styles/taro-ui.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
@@ -18,7 +17,6 @@ import './libs/styles/taro-ui.scss'
 const store = configStore()
 
 class App extends Component {
-
   /**
    * 指定config的类型声明为: Taro.Config
    *
@@ -27,15 +25,31 @@ class App extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    pages: [
-      'pages/home/index',
-      'pages/personal/index'
-    ],
+    pages: ['pages/home/index', 'pages/user/index'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      list: [
+        {
+          text: '首页',
+          pagePath: 'pages/home/index',
+          iconPath: './assets/images/tab-bar/home.png',
+          selectedIconPath: './assets/images/tab-bar/home-active.png'
+        },
+        {
+          text: '我的',
+          pagePath: 'pages/user/index',
+          iconPath: './assets/images/tab-bar/user.png',
+          selectedIconPath: './assets/images/tab-bar/user-active.png'
+        }
+      ],
+      color: '#666',
+      selectedColor: '#00afc7',
+      backgroundColor: '#fff'
     }
   }
 

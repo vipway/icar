@@ -1,0 +1,127 @@
+@import "../../styles/theme.scss";
+.user {
+  position: relative;
+}
+
+.user-wrap {
+  background: #f4f4f4;
+}
+
+.user-logout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  height: 96px;
+  background: $white;
+  &-txt {
+    color: #333;
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+
+.user-empty {
+  height: 20px;
+}
+
+.user-activity {
+  position: absolute;
+  right: 30px;
+  bottom: 60px;
+}
+
+
+
+
+
+
+
+$height: 200px;
+$avatarSize: 140px;
+
+.user-info {
+  position: relative;
+  height: $height;
+  overflow: hidden;
+}
+
+.user-info-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.user-info-avatar {
+  margin-left: 30px;
+  width: $avatarSize;
+  height: $avatarSize;
+  border-radius: $avatarSize / 2;
+  overflow: hidden;
+
+  &-img {
+    width: $avatarSize;
+    height: $avatarSize;
+  }
+}
+
+.user-info-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+
+  &-name {
+    color: #444;
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  &-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 28px;
+  }
+
+  &-level {
+    margin-right: 12px;
+    width: 30px;
+    height: 30px;
+  }
+
+  &-uid {
+    color: $text-color-light;
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  &-tip {
+    margin-top: 28px;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 28px;
+    line-height: 28px;
+  }
+}
+
+.user-info-extra {
+  align-self: flex-start;
+  margin-left: 18px;
+  width: 220px;
+
+  &-qr {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 24px;
+    padding-right: 30px;
+
+    &-img {
+      width: 44px;
+      height: 44px;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'icar',
   date: '2019-3-19',
@@ -90,9 +92,17 @@ const config = {
           }
         }
       }
-    },
-    esnextModules: ['taro-ui']
-  }
+    }
+  },
+  alias: {
+    '@utils': path.resolve(__dirname, '..', 'src/utils'),
+    '@assets': path.resolve(__dirname, '..', 'src/assets'),
+    '@styles': path.resolve(__dirname, '..', 'src/styles'),
+    '@actions': path.resolve(__dirname, '..', 'src/actions'),
+    '@reducers': path.resolve(__dirname, '..', 'src/reducers'),
+    '@constants': path.resolve(__dirname, '..', 'src/constants'),
+    '@components': path.resolve(__dirname, '..', 'src/components')
+  },
 }
 
 module.exports = function (merge) {
