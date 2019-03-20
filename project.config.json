@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "icar",
 	"description": "Easy washing car.",
-	"appid": "wxd80d9293cf7570a4",
+	"appid": "wx4b4e3274069e93d8",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,

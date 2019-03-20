@@ -1,6 +1,5 @@
 $prefix: 'home-page';
 .#{$prefix} {
-  position: relative;
   width: 100%;
   height: 100%;
   .home-scan {
@@ -13,8 +12,7 @@ $prefix: 'home-page';
     border-radius: 50%;
     background-color: #f38031;
     .img-wrap {
-      margin: 0 auto;
-      padding-top: 12px;
+      margin: 12px auto 0 auto;
       width: 50%;
       height: 50%;
       .img-scan {
