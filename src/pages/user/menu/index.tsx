@@ -21,9 +21,9 @@ const MENU_LIST = [{
   text: '红包',
   img: require('./images/red-packet.png')
 }, {
-  key: 'location',
+  key: 'car',
   text: '车辆管理',
-  img: require('./images/location.png')
+  img: require('./images/car.png')
 }, {
   key: 'safe',
   text: '账号安全',

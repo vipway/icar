@@ -25,7 +25,7 @@ class App extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    pages: ['pages/home/index', 'pages/user/index'],
+    pages: ['pages/home/index', 'pages/shop/index', 'pages/user/index'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -41,6 +41,18 @@ class App extends Component {
           selectedIconPath: './assets/images/tab-bar/home-active.png'
         },
         {
+          text: '下单',
+          pagePath: 'pages/shop/index',
+          iconPath: './assets/images/tab-bar/shop.png',
+          selectedIconPath: './assets/images/tab-bar/shop-active.png'
+        },
+        // {
+        //   text: '门店',
+        //   pagePath: 'pages/user/index',
+        //   iconPath: './assets/images/tab-bar/user.png',
+        //   selectedIconPath: './assets/images/tab-bar/user-active.png'
+        // },
+        {
           text: '我的',
           pagePath: 'pages/user/index',
           iconPath: './assets/images/tab-bar/user.png',
@@ -52,16 +64,6 @@ class App extends Component {
       backgroundColor: '#fff'
     }
   }
-
-  componentDidMount() { }
-
-  componentDidShow() { }
-
-  componentDidHide() { }
-
-  componentCatchError() { }
-
-  componentDidCatchError() { }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
