@@ -3,7 +3,6 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Map, Text, Image, CoverView, CoverImage } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { add, minus, asyncAdd } from '../../actions/counter'
-import scan from '../../assets/images/home/scan.png'
 import './index.scss'
 
 type PageStateProps = {
@@ -67,7 +66,51 @@ class Home extends Component {
   render() {
     return (
       <View className='home-page'>
-        <Map style={{ width: '100%', height: '100%' }} latitude={31.193327} longitude={121.497923} onClick={this.handleClickMap}>
+        <Map
+          showLocation
+          style={{ width: '100%', height: '100%' }}
+          latitude={31.245770}
+          longitude={121.591540}
+          onClick={this.handleClickMap}
+          markers={[
+            {
+              id: 1,
+              latitude: 31.245770,
+              longitude: 121.591540,
+              iconPath: require('./images/point.png')
+            },
+            {
+              id: 2,
+              latitude: 31.203410,
+              longitude: 121.407510,
+              iconPath: require('./images/point.png')
+            },
+            {
+              id: 3,
+              latitude: 31.252700,
+              longitude: 121.588980,
+              iconPath: require('./images/point.png')
+            },
+            {
+              id: 4,
+              latitude: 31.239186,
+              longitude: 121.581920,
+              iconPath: require('./images/point.png')
+            },
+            {
+              id: 5,
+              latitude: 31.247600,
+              longitude: 121.578380,
+              iconPath: require('./images/point.png')
+            },
+            {
+              id: 6,
+              latitude: 31.249053,
+              longitude: 121.595645,
+              iconPath: require('./images/point.png')
+            }
+          ]}
+        >
           <CoverView className='map-location' onClick={this.onClickLocation}>
             <CoverImage className='img-location' src={require('./images/location.png')} />
           </CoverView>
