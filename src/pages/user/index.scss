@@ -32,15 +32,8 @@
   bottom: 60px;
 }
 
-
-
-
-
-
-
 $height: 200px;
 $avatarSize: 140px;
-
 .user-info {
   position: relative;
   height: $height;
@@ -61,7 +54,6 @@ $avatarSize: 140px;
   height: $avatarSize;
   border-radius: $avatarSize / 2;
   overflow: hidden;
-
   &-img {
     width: $avatarSize;
     height: $avatarSize;
@@ -73,32 +65,27 @@ $avatarSize: 140px;
   display: flex;
   flex-direction: column;
   margin-left: 30px;
-
   &-name {
     color: #444;
     font-size: 36px;
     line-height: 36px;
   }
-
   &-wrap {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-top: 28px;
   }
-
   &-level {
     margin-right: 12px;
     width: 30px;
     height: 30px;
   }
-
   &-uid {
-    color: $text-color-light;
+    color: $color-text-grey;
     font-size: 28px;
     line-height: 28px;
   }
-
   &-tip {
     margin-top: 28px;
     color: rgba(0, 0, 0, 0.3);
@@ -111,14 +98,12 @@ $avatarSize: 140px;
   align-self: flex-start;
   margin-left: 18px;
   width: 220px;
-
   &-qr {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     padding-top: 24px;
     padding-right: 30px;
-
     &-img {
       width: 44px;
       height: 44px;

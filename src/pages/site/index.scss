@@ -1,0 +1,100 @@
+@import '../../styles/mixins.scss';
+$prefix: 'site-page';
+.#{$prefix} {
+  width: 100%;
+  height: 100%;
+  background-color: $bg-color-grey;
+  .filter {
+    display: flex;
+    padding: 12px;
+    &-region {
+      margin-right: 12px;
+      .name {
+        font-size: $font-size-normal;
+      }
+      .arrow {
+        height: 48px;
+        width: 48px;
+        vertical-align: middle;
+      }
+    }
+    &-input {
+      flex: 1;
+      padding-left: 12px;
+      font-size: $font-size-normal;
+      background-color: $bg-color-normal;
+      border-radius: $border-radius-normal;
+      input {
+        height: 100%;
+      }
+      ::placeholder {
+        color: $color-grey-2;
+        font-size: $font-size-normal;
+      }
+    }
+  }
+  .site-list {
+    .site-item {
+      display: flex;
+      margin-bottom: 12px;
+      padding: 12px 20px;
+      background-color: $bg-color-normal;
+      .img-wrap {
+        width: 160px;
+        height: 160px;
+        background: $bg-color-grey;
+        border-radius: $border-radius-normal;
+        .site-img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .site-info {
+        flex: 1;
+        padding: 12px 0 12px 12px;
+        .site-base {
+          display: flex;
+          flex: 1;
+          justify-content: space-between;
+          .name {
+            flex: 1;
+            padding-right: 12px;
+            font-size: $font-size-lg;
+          }
+          .status {
+            font-size: $font-size-xs;
+            color: #666;
+          }
+          .status {
+            &-normal {
+              color: $color-success;
+            }
+            &-build {
+              color: #808695;
+            }
+          }
+        }
+      }
+      .site-location {
+        display: flex;
+        .address {
+          flex: 1;
+          padding-right: 12px;
+          font-size: $font-size-sm;
+          color: #666;
+        }
+        .navigation {
+          .img {
+            width: 48px;
+            height: 48px;
+            vertical-align: middle;
+          }
+          .distance {
+            font-size: $font-size-xs;
+            color: $color-text-grey;
+          }
+        }
+      }
+    }
+  }
+}

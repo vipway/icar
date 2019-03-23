@@ -1,4 +1,27 @@
-@import "./mixins.scss";
+$hd: 2; // 基本单位
 // color
 $white:#fff;
-$text-color-light:#666666;
+$color-success:#19be6b;
+$color-grey-0: #333;
+$color-grey-1: #666;
+$color-grey-2: #999;
+$color-grey-3: #ccc;
+$color-grey-4: #e5e5e5;
+$color-grey-5: #f0f0f0;
+$color-grey-6: #f7f7f7;
+// background-color
+$bg-color-normal:#ffffff;
+$bg-color-grey:#f8f8f8;
+$bg-color-green:#19be6b;
+// font-color
+$color-text-normal:#333333;
+$color-text-grey:#666666;
+// font-size
+$font-size-xs: 12px * $hd; // 辅助信息
+$font-size-sm: 13px * $hd; // 小字号
+$font-size-normal: 14px * $hd; // 默认字号
+$font-size-lg: 16px * $hd; // 凸显字号
+$font-size-xl: 18px * $hd; // 大字号
+$font-size-xxl: 20px * $hd; // 特大字号
+// border-radius
+$border-radius-normal: 5px * $hd;

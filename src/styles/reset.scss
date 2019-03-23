@@ -4,10 +4,26 @@
  * 但是 H5 上内置组件样式可能会错乱，因此暂时不这样处理，有用到 flex 的地方都显式声明主轴方向即可
  */
 
-/* weapp */
 
+
+html,body {
+  color: #333;
+}
+
+/* weapp */
 page {
   height: 100%;
+}
+
+/* h5 */
+.taro_router {
+  height: 100%;
+  width: 100%;
+}
+
+.taro_page {
+  height: 100%;
+  width: 100%;
 }
 
 view,

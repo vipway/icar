@@ -25,7 +25,12 @@ class App extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    pages: ['pages/home/index', 'pages/shop/index', 'pages/user/index'],
+    pages: [
+      'pages/home/index',
+      'pages/shop/index',
+      'pages/user/index',
+      'pages/site/index'
+    ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -62,6 +67,11 @@ class App extends Component {
       color: '#666',
       selectedColor: '#00afc7',
       backgroundColor: '#fff'
+    },
+    permission: {
+      'scope.userLocation': {
+        desc: '你的位置信息将用于小程序位置接口的效果展示' // '您的位置信息将用于查找附近站点'
+      }
     }
   }
 
