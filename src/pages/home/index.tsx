@@ -3,6 +3,7 @@ import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Map, CoverView, CoverImage } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { add, minus, asyncAdd } from '../../actions/counter'
+import AppMap from '../../components/map/AppMap'
 import './index.scss'
 
 type PageStateProps = {
@@ -80,13 +81,14 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.mapContext = Taro.createMapContext('ezxMap')
-    this.getUserLocation()
+    // this.mapContext = Taro.createMapContext('ezxMap')
+    // this.getUserLocation()
   }
 
+  // 点击地图事件
   private handleClickMap = (e) => {
     console.log(e, 'handleClickMap')
-    return false
+    this.setState({ showSiteDetail: false })
   }
 
   // 点击定位图标事件
@@ -98,6 +100,20 @@ class Home extends Component {
   private handleClickSite = () => {
     Taro.navigateTo({
       url: '/pages/site/index'
+    })
+  }
+
+  /** 
+   * https://developers.weixin.qq.com/miniprogram/dev/api/wx.scanCode.html
+   * 扫描二维码
+  */
+  private handleClickScan = () => {
+    Taro.scanCode({
+      onlyFromCamera: true,
+    }).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log('扫码异常：', err)
     })
   }
 
@@ -131,83 +147,88 @@ class Home extends Component {
     const { latitude, longitude } = userLocation
     return (
       <View className='home-page'>
-        <Map
-          className='map-context'
-          id="ezxMap"
-          showLocation
-          latitude={latitude}
-          longitude={longitude}
-          onClick={this.handleClickMap}
-          markers={[
-            {
-              id: 1,
-              latitude: 31.245770,
-              longitude: 121.591540,
-              iconPath: require('./images/point.png')
-            },
-            {
-              id: 2,
-              latitude: 31.203410,
-              longitude: 121.407510,
-              iconPath: require('./images/point.png')
-            },
-            {
-              id: 3,
-              latitude: 31.252700,
-              longitude: 121.588980,
-              iconPath: require('./images/point.png')
-            },
-            {
-              id: 4,
-              latitude: 31.239186,
-              longitude: 121.581920,
-              iconPath: require('./images/point.png')
-            },
-            {
-              id: 5,
-              latitude: 31.247600,
-              longitude: 121.578380,
-              iconPath: require('./images/point.png')
-            },
-            {
-              id: 6,
-              latitude: 31.249053,
-              longitude: 121.595645,
-              iconPath: require('./images/point.png')
-            }
-          ]}
-        >
-          <CoverView className='map-location' onClick={this.handleClickLocation}>
-            <CoverImage className='img-location' src={require('./images/location.png')} />
-          </CoverView>
-          <CoverView className='wash-scan'>
-            <CoverView className='img-wrap'>
-              <CoverImage className='img-scan' src={require('./images/scan.png')} />
-            </CoverView>
-            <CoverView className='btn-text'>扫码洗车</CoverView>
-          </CoverView>
-          <CoverView className='map-store' onClick={this.handleClickSite}>站点
-            {/* <CoverImage className='img-store' src={require('./images/store.png')} /> */}
-          </CoverView>
-          {/* 站点信息 */}
-          {showSiteDetail && <CoverView className='map-site'>
-            <CoverView className='site-info'>
-              <CoverView className='name'>中石化上海虹桥站</CoverView>
-              <CoverView className='attr'>
-                <CoverView className='tag'>15分钟免费停车</CoverView>
-                <CoverView className='tag'>文明排队</CoverView>
-              </CoverView>
-            </CoverView>
-            <CoverView className='navigation'>
-              <CoverView className='img-box'>
-                <CoverImage className='img' src={require('./images/navigation.png')} />
-              </CoverView>
-              <CoverView className='distance'>155km</CoverView>
-            </CoverView>
-          </CoverView>}
-        </Map>
+        <AppMap latitude={31.245770} longitude={121.591540} />
       </View>
     )
+    // return (
+    //   <View className='home-page'>
+    //     <Map
+    //       className='map-context'
+    //       id="ezxMap"
+    //       showLocation
+    //       latitude={latitude}
+    //       longitude={longitude}
+    //       onClick={this.handleClickMap}
+    //       markers={[
+    //         {
+    //           id: 1,
+    //           latitude: 31.245770,
+    //           longitude: 121.591540,
+    //           iconPath: require('./images/point.png')
+    //         },
+    //         {
+    //           id: 2,
+    //           latitude: 31.203410,
+    //           longitude: 121.407510,
+    //           iconPath: require('./images/point.png')
+    //         },
+    //         {
+    //           id: 3,
+    //           latitude: 31.252700,
+    //           longitude: 121.588980,
+    //           iconPath: require('./images/point.png')
+    //         },
+    //         {
+    //           id: 4,
+    //           latitude: 31.239186,
+    //           longitude: 121.581920,
+    //           iconPath: require('./images/point.png')
+    //         },
+    //         {
+    //           id: 5,
+    //           latitude: 31.247600,
+    //           longitude: 121.578380,
+    //           iconPath: require('./images/point.png')
+    //         },
+    //         {
+    //           id: 6,
+    //           latitude: 31.249053,
+    //           longitude: 121.595645,
+    //           iconPath: require('./images/point.png')
+    //         }
+    //       ]}
+    //     >
+    //       <CoverView className='map-location' onClick={this.handleClickLocation}>
+    //         <CoverImage className='img-location' src={require('./images/location.png')} />
+    //       </CoverView>
+    //       <CoverView className='wash-scan' onClick={this.handleClickScan}>
+    //         <CoverView className='img-wrap'>
+    //           <CoverImage className='img-scan' src={require('./images/scan.png')} />
+    //         </CoverView>
+    //         <CoverView className='btn-text'>扫码洗车</CoverView>
+    //       </CoverView>
+    //       <CoverView className='map-store' onClick={this.handleClickSite}>站点
+    //         {/* <CoverImage className='img-store' src={require('./images/store.png')} /> */}
+    //       </CoverView>
+    //       {/* 站点信息 */}
+    //       {showSiteDetail && <CoverView className='map-site'>
+    //         <CoverView className='site-info'>
+    //           <CoverView className='name'>中石化上海虹桥站</CoverView>
+    //           <CoverView className='attr'>
+    //             <CoverView className='tag'>15分钟免费停车</CoverView>
+    //             <CoverView className='tag'>文明排队</CoverView>
+    //           </CoverView>
+    //         </CoverView>
+    //         <CoverView className='navigation'>
+    //           <CoverView className='img-box'>
+    //             <CoverImage className='img' src={require('./images/navigation.png')} />
+    //           </CoverView>
+    //           <CoverView className='distance'>155km</CoverView>
+    //         </CoverView>
+    //       </CoverView>}
+    //     </Map>
+    //   </View>
+    // )
   }
 }
 

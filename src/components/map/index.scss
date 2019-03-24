@@ -1,0 +1,13 @@
+$prefix: 'app-map';
+.#{$prefix} {
+  height: 100%;
+  width: 100%;
+  .amap-copyright {
+    display: none !important;
+    z-index: -1;
+  }
+  .amap-logo {
+    display: none !important;
+    z-index: -1;
+  }
+}
