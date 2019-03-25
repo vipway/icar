@@ -1,8 +1,7 @@
 import { ComponentClass } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
-import appConfig from '../../config/app'
-import './index.scss'
+import appConfig from '../../../config/app'
+import './amap.scss'
 
 type PageStateProps = {
   latitude: number // 纬度，范围为 -90~90，负数表示南纬
@@ -21,20 +20,44 @@ interface AppMap {
 
 class AppMap extends Component {
 
+
+
   config: Config = {
     navigationBarTitleText: '首页'
   }
 
-  private refMap: HTMLElement;
+  private amap: any
+  private refMap: HTMLElement
 
   componentDidMount() {
     window.onLoad = () => {
       const { latitude, longitude } = this.props
-      const map = new AMap.Map('appMap', {
+      this.amap = new AMap.Map('appMap', {
         resizeEnable: true,
         center: [longitude, latitude],
-        zoom: 13
+        zoom: 15
       });
+      // 中骏广场唯品会
+      new AMap.Marker({
+        map: this.amap,
+        icon: require('../images/point.png'),
+        position: [longitude, latitude]
+      });
+
+      // 恒基旭辉
+      new AMap.Marker({
+        map: this.amap,
+        icon: require('../images/point.png'),
+        position: [121.317094, 31.211006]
+      });
+
+      // 富力集团
+      new AMap.Marker({
+        map: this.amap,
+        icon: require('../images/point.png'),
+        position: [121.305802, 31.201993]
+      });
+
 
     }
     const url = `https://webapi.amap.com/maps?v=1.4.13&key=${appConfig.mapKey}&callback=onLoad`
@@ -42,6 +65,8 @@ class AppMap extends Component {
     jsapi.charset = 'utf-8';
     jsapi.src = url;
     document.head.appendChild(jsapi);
+
+
   }
 
   render() {
