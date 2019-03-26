@@ -54,7 +54,7 @@ class AppMap extends Component {
       verticalAccuracy: 0,
       horizontalAccuracy: 0
     },
-    showSiteDetail: false
+    showSiteDetail: true
   }
 
   constructor() {

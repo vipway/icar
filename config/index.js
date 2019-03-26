@@ -92,6 +92,20 @@ const config = {
           }
         }
       }
+    },
+    devServer: {
+      host: '0.0.0.0',
+      port: 10086,
+      // proxy: {
+      //   '/icar': {
+      //     target: 'http://120.27.225.127:10080',
+      //     secure: false,
+      //     changeOrigin: true,
+      //     pathRewrite: {
+      //       '^/icar': ''
+      //     }
+      //   }
+      // }
     }
   },
   alias: {
