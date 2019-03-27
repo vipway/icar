@@ -93,6 +93,9 @@ const config = {
         }
       }
     },
+    router: {
+      mode: 'browser'
+    },
     devServer: {
       host: '0.0.0.0',
       port: 10086,
