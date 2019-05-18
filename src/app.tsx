@@ -5,7 +5,12 @@ import { Provider } from '@tarojs/redux'
 import Index from './pages/index'
 
 import configStore from './store'
+<<<<<<< HEAD
 import 'taro-ui/dist/style/index.scss'
+=======
+import WxSdk from '../../../assets/js/WxSdk'
+
+>>>>>>> a1ade977402a46729d682a355be7d6a92a603da8
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools

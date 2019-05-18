@@ -1,8 +1,10 @@
 $prefix: 'app-map';
 
 .#{$prefix} {
+  position: fixed;
   height: 100%;
   width: 100%;
+  z-index: 1;
 
   .map-context {
     height: 100%;
