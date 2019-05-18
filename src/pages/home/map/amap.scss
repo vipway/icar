@@ -1,19 +1,24 @@
 $prefix: 'app-map';
+
 .#{$prefix} {
   height: 100%;
   width: 100%;
+
   .map-context {
     height: 100%;
     width: 100%;
+
     .amap-copyright {
       display: none !important;
       z-index: -1;
     }
+
     .amap-logo {
       display: none !important;
       z-index: -1;
     }
   }
+
   /* 地图浮层通用样式 */
   .map-location {
     position: fixed;
@@ -27,11 +32,13 @@ $prefix: 'app-map';
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     z-index: 999;
+
     .img-location {
       width: 100%;
       height: 100%;
     }
   }
+
   .wash-scan {
     position: fixed;
     left: calc(50% - 90px);
@@ -42,20 +49,38 @@ $prefix: 'app-map';
     border-radius: 50%;
     background-color: #f38031;
     z-index: 999;
+
     .img-wrap {
       margin: 12px auto 0 auto;
       width: 50%;
       height: 50%;
+
       .img-scan {
         width: 100%;
         height: 100%;
       }
     }
+
     .btn-text {
       font-size: 28px;
       color: #fff;
     }
   }
+
+  .wash-btn {
+    position: fixed;
+    left: calc(50% - 110px);
+    bottom: 205px;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+    font-size: 32px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: #f38031;
+  }
+
   .map-store {
     position: fixed;
     right: 20px;
@@ -69,31 +94,39 @@ $prefix: 'app-map';
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
     z-index: 999;
+
     .img-store {
       width: 100%;
       height: 100%;
     }
   }
+
   .map-site {
     position: fixed;
     top: 0;
     width: 100%;
     padding: 24px;
+
     .site-wrap {
       display: flex;
       padding: 16px;
       border-radius: 10px;
       background-color: #fff;
+
       .site-info {
         flex: 1;
+
         .name {
           color: #333;
           font-size: 32px;
         }
+
         .attr {
           display: flex;
+
           .property-wrap {
             flex: 1;
+
             .tag {
               display: inline-block;
               margin-right: 10px;
@@ -106,10 +139,12 @@ $prefix: 'app-map';
           }
         }
       }
+
       .navigation {
         display: flex;
         align-items: flex-end;
         text-align: center;
+
         .img-box {
           .img {
             width: 48px;
@@ -118,6 +153,7 @@ $prefix: 'app-map';
             vertical-align: middle;
           }
         }
+
         .distance {
           padding: 4px 6px;
           font-size: 28px;

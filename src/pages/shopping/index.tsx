@@ -1,6 +1,6 @@
 import { ComponentClass } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
+import { View, Button, Image } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
 // import { add, minus, asyncAdd } from '../../actions/counter'
@@ -35,15 +35,23 @@ interface Shop {
 class Shop extends Component {
 
   config: Config = {
-    navigationBarTitleText: '下单'
+    navigationBarTitleText: '購物車'
   }
 
+  // 跳转至商场页面
+  private toMall = () => {
+    Taro.navigateTo({
+      url: '/pages/mall/index'
+    })
+  }
 
   render() {
     return (
-      <View className='shop-page'>
-
-        <View><Text>下单</Text></View>
+      <View className='shopping-page'>
+        <View className='empty-cart'>
+          <View><Image className='img' src={require('./images/empty-cart.png')} /></View>
+          <View className='action'><Button className="btn" onClick={this.toMall}>去購物</Button></View>
+        </View>
       </View>
     )
   }

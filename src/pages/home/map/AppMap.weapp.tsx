@@ -41,7 +41,7 @@ class AppMap extends Component {
   private mapContext: any;
 
   config: Config = {
-    navigationBarTitleText: 'e智洗'
+    navigationBarTitleText: 'YF智能洗车'
   }
 
   state = {
@@ -179,18 +179,18 @@ class AppMap extends Component {
         <CoverView className='img-wrap'>
           <CoverImage className='img-scan' src={require('../images/scan.png')} />
         </CoverView>
-        <CoverView className='btn-text'>扫码洗车</CoverView>
+        <CoverView className='btn-text'>掃碼洗車</CoverView>
       </CoverView>
-      <CoverView className='map-store' onClick={this.handleClickSite}>站点
+      <CoverView className='map-store' onClick={this.handleClickSite}>站點
             {/* <CoverImage className='img-store' src={require('./images/store.png')} /> */}
       </CoverView>
       {/* 站点信息 */}
       {showSiteDetail && <CoverView className='map-site'>
         <CoverView className='site-info'>
-          <CoverView className='name'>中石化上海虹桥站</CoverView>
+          <CoverView className='name'>中石化上海虹橋站</CoverView>
           <CoverView className='attr'>
-            <CoverView className='tag'>15分钟免费停车</CoverView>
-            <CoverView className='tag'>文明排队</CoverView>
+            <CoverView className='tag'>15分鐘免費停車</CoverView>
+            <CoverView className='tag'>文明排隊</CoverView>
           </CoverView>
         </CoverView>
         <CoverView className='navigation'>

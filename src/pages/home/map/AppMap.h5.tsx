@@ -103,13 +103,12 @@ class AppMap extends Component {
   // 点击门店图标事件
   private handleClickSite = () => {
     Taro.navigateTo({
-      url: '/pages/site/index'
+      url: '/pages/store/index'
     })
   }
 
   // 地图门店点击事件
   private handleMarker = (data, e) => {
-    console.log(1111)
     this.setState({
       siteInfo: data,
       showSiteDetail: true
@@ -121,6 +120,20 @@ class AppMap extends Component {
         imageSize: new AMap.Size(36, 36)
       })
     )
+  }
+
+  // 跳转至站点详情
+  private toStoreDetail = () => {
+    Taro.navigateTo({
+      url: '/pages/storeDetail/index'
+    })
+  }
+
+  // 快捷支付页面
+  private toQuickPay = () => {
+    Taro.navigateTo({
+      url: '/pages/quick/index'
+    })
   }
 
   // 获取当前用户的地理位置、速度
@@ -177,24 +190,25 @@ class AppMap extends Component {
         <View className='map-location' onClick={this.handleClickLocation}>
           <Image className='img-location' src={require('../images/location.png')} />
         </View>
-        <View className='wash-scan' onClick={this.handleClickScan}>
+        <View className='wash-scan' onClick={this.toQuickPay}>
           <View className='img-wrap'>
             <Image className='img-scan' src={require('../images/scan.png')} />
           </View>
-          <View className='btn-text'>扫码洗车</View>
+          <View className='btn-text'>掃碼洗車</View>
         </View>
-        <View className='map-store' onClick={this.handleClickSite}>站点
+        {/* <View className='wash-btn' onClick={this.toQuickPay}>掃碼洗車</View> */}
+        <View className='map-store' onClick={this.handleClickSite}>門店
             {/* <Image className='img-store' src={require('./images/store.png')} /> */}
         </View>
         {/* 站点信息 */}
         {showSiteDetail && <View className='map-site'>
           <View className="site-wrap">
-            <View className='site-info'>
+            <View className='site-info' onClick={this.toStoreDetail}>
               <View className='name'>{storeName}</View>
               <View className='attr'>
                 <View className='property-wrap'>
-                  <View className='tag'>15分钟免费停车</View>
-                  <View className='tag'>文明排队</View>
+                  <View className='tag'>15分鐘免費停車</View>
+                  <View className='tag'>文明排隊</View>
                 </View>
                 <View className='navigation'>
                   <View className='img-box'>
@@ -204,7 +218,6 @@ class AppMap extends Component {
                 </View>
               </View>
             </View>
-
           </View>
         </View>}
       </View>

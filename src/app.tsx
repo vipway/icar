@@ -5,7 +5,7 @@ import { Provider } from '@tarojs/redux'
 import Index from './pages/index'
 
 import configStore from './store'
-
+import 'taro-ui/dist/style/index.scss'
 import './app.scss'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -27,9 +27,14 @@ class App extends Component {
   config: Config = {
     pages: [
       'pages/home/index',
-      'pages/shop/index',
+      'pages/mall/index',
+      'pages/shopping/index',
       'pages/user/index',
-      'pages/site/index'
+      'pages/store/index',
+      'pages/storeDetail/index',
+      'pages/quick/index',
+      'pages/login/index',
+      'pages/productDetail/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -40,16 +45,22 @@ class App extends Component {
     tabBar: {
       list: [
         {
-          text: '首页',
+          text: '洗車',
           pagePath: 'pages/home/index',
           iconPath: './assets/images/tab-bar/home.png',
           selectedIconPath: './assets/images/tab-bar/home-active.png'
         },
         {
-          text: '下单',
-          pagePath: 'pages/shop/index',
-          iconPath: './assets/images/tab-bar/shop.png',
-          selectedIconPath: './assets/images/tab-bar/shop-active.png'
+          text: '商城',
+          pagePath: 'pages/mall/index',
+          iconPath: './assets/images/tab-bar/mall.png',
+          selectedIconPath: './assets/images/tab-bar/mall-active.png'
+        },
+        {
+          text: '購物車',
+          pagePath: 'pages/shopping/index',
+          iconPath: './assets/images/tab-bar/shopping.png',
+          selectedIconPath: './assets/images/tab-bar/shopping-active.png'
         },
         // {
         //   text: '门店',

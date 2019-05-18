@@ -1,0 +1,30 @@
+$prefix: 'shopping-page';
+
+.#{$prefix} {
+  .empty-cart {
+    padding-top: 40px;
+    text-align: center;
+    .img {
+      width: 300px;
+      height: 300px;
+    }
+
+    .text {
+      font-size: 28px;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .action {
+      padding-top: 40px;
+      width: 60%;
+      margin: 0 auto;
+
+      .btn {
+        color: #fff;
+        border: none;
+        background-color: #00afc7;
+      }
+    }
+  }
+}

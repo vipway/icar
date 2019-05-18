@@ -1,0 +1,128 @@
+.quick-page {
+  height: 100%;
+  background: #f8f8f8;
+  overflow: auto;
+
+  .quick-swiper {
+    .swiper-item {
+      .img-banner {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+
+  .quick-content {
+    .at-list {
+      .at-list__item {
+        font-size: 28px;
+
+        .item-extra__info {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      align-content: flex-start;
+      justify-content: space-between;
+      padding: 20px;
+
+      .product-item {
+        width: 30%;
+        padding: 8px 12px;
+        text-align: center;
+        position: relative;
+        border-radius: 10px;
+        border: 1PX solid rgb(27, 201, 142);
+
+        // &:nth-child(1) {
+        //   background: rgb(27, 201, 142);
+        // }
+
+        // &:nth-child(2) {
+        //   background: rgb(68, 126, 255);
+        // }
+
+        // &:nth-child(3) {
+        //   background: rgb(159, 133, 255);
+        // }
+
+        .title {
+          font-size: 32px;
+        }
+
+        .detail {
+          font-size: 20px;
+        }
+
+        .price {
+          font-size: 32px;
+        }
+      }
+
+      .item-active {
+        color: #fff;
+        background: rgb(27, 201, 142);
+      }
+    }
+
+    .payment {
+
+      .title {
+        font-size: 32px;
+        padding-left: 20px;
+        background: #fff;
+      }
+
+      .list {
+        font-size: 28px;
+
+        .at-radio__option-wrap {
+          padding-top: 12px;
+          padding-bottom: 12px;
+        }
+      }
+    }
+  }
+
+  .bottom-holder {
+    height: 120px;
+  }
+
+  .quick-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+
+    .moeny {
+      flex: 1;
+
+      .label {
+        padding-right: 12px;
+      }
+
+      .text {
+        color: #f30;
+        font-size: 36px;
+      }
+    }
+
+    .submit {
+      width: 160px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      color: #fff;
+      background: #f30;
+      border-radius: 30px;
+    }
+  }
+}

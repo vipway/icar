@@ -39,7 +39,7 @@ interface Home {
 class Home extends Component {
 
   config: Config = {
-    navigationBarTitleText: 'e智洗'
+    navigationBarTitleText: 'YF智能洗车'
   }
 
   constructor() {

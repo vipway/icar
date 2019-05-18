@@ -45,12 +45,24 @@ interface User {
 class User extends Component {
 
   config: Config = {
-    navigationBarTitleText: '个人中心'
+    navigationBarTitleText: '個人中心'
   }
 
   private handleLogin = () => {
-    Taro.navigateTo({
-      url: '/pages/login/index',
+    Taro.showToast({
+      title: '頁面正在研發中~',
+      icon: 'none'
+    })
+    // Taro.navigateTo({
+    //   url: '/pages/login/index',
+    // })
+  }
+
+  // 切换账号
+  private handleChangeAccount = () => {
+    Taro.showToast({
+      title: '功能正在研發中~',
+      icon: 'none'
     })
   }
 
@@ -74,15 +86,15 @@ class User extends Component {
 
               <View className='user-info-state' onClick={this.handleLogin}>
                 <Text className='user-info-name'>
-                  未登录
+                  未登錄
                 </Text>
-                <Text className='user-info-tip'>点击登录账号</Text>
+                <Text className='user-info-tip'>點擊登入帳號</Text>
               </View>
             </View>
           </View>
           <Menu />
-          <View className='user-logout' onClick={this.handleLogin}>
-            <Text className='user-logout-txt'>切换账号</Text>
+          <View className='user-logout' onClick={this.handleChangeAccount}>
+            <Text className='user-logout-txt'>切換帳號</Text>
           </View>
           <View className='user-empty' />
         </ScrollView>

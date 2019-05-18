@@ -72,6 +72,7 @@ const config = {
   h5: {
     publicPath: '/',
     staticDirectory: 'static',
+    esnextModules: ['taro-ui'],
     module: {
       postcss: {
         autoprefixer: {
@@ -95,7 +96,7 @@ const config = {
     },
     devServer: {
       host: '0.0.0.0',
-      port: 10086,
+      port: 10088,
       // proxy: {
       //   '/icar': {
       //     target: 'http://120.27.225.127:10080',

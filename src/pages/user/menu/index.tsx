@@ -6,39 +6,43 @@ import './index.scss'
 
 const MENU_LIST = [{
   key: 'order',
-  text: '我的订单',
+  text: '我的訂單',
+  img: require('./images/order.png')
+}, {
+  key: 'order',
+  text: '我的洗車券',
   img: require('./images/order.png')
 }, {
   key: 'credit',
-  text: '我的积分',
+  text: '我的積分',
   img: require('./images/credit.png')
 }, {
   key: 'coupon',
-  text: '优惠券',
+  text: '優惠券',
   img: require('./images/coupon.png')
 }, {
-  key: 'red-packet',
-  text: '红包',
-  img: require('./images/red-packet.png')
+  key: 'order',
+  text: '洗車記錄',
+  img: require('./images/order.png')
 }, {
   key: 'car',
-  text: '车辆管理',
+  text: '車輛管理',
   img: require('./images/car.png')
 }, {
   key: 'safe',
-  text: '账号安全',
+  text: '賬號安全',
   img: require('./images/safe.png')
 }, {
   key: 'contact',
-  text: '联系客服',
+  text: '聯繫客服',
   img: require('./images/contact.png')
 }, {
   key: 'feedback',
-  text: '用户反馈',
+  text: '用戶反饋',
   img: require('./images/feedback.png')
 }, {
   key: 'help',
-  text: '帮助中心',
+  text: '幫助中心',
   url: 'http://m.you.163.com/help',
   img: require('./images/help.png')
 }]
@@ -72,7 +76,7 @@ class Menu extends Component {
       // jump({ url: menu.url, title: menu.text })
     } else {
       Taro.showToast({
-        title: '目前只实现了帮助中心~',
+        title: '正在研發中~',
         icon: 'none'
       })
     }
